@@ -28,14 +28,15 @@ import com.example.demo.respository.UserRespository;
 
 
 		//update 
-		public User update(User emp) {
-			User existingUser= userRespository.findById(emp.getId()).orElse(null);
+		public User update(User u) {
+			User existingUser= userRespository.findById(u.getId()).orElse(null);
 
-			existingUser.setName(emp.getName());
-			existingUser.setAge(emp.getAge());
-			existingUser.setEmail(emp.getEmail());
-			existingUser.setUsername(emp.getUsername());
-			return userRespository.save(emp);  
+			existingUser.setName(u.getName());
+			existingUser.setAge(u.getAge());
+			existingUser.setEmail(u.getEmail());
+			existingUser.setUsername(u.getUsername());
+			existingUser.setPassword(u.getPassword());
+			return userRespository.save(u);  
 
 		}
 
